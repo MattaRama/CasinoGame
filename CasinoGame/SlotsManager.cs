@@ -26,7 +26,6 @@ namespace CasinoGame
         {
             this.image = Image.FromFile(imagePath);
             this.name = name;
-
         }
     }
 }
