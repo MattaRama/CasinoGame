@@ -32,7 +32,7 @@ namespace CasinoGame
             nudBet.Value = Constants.MINIMUM_BET;
 
             // client connection setup
-            serverAPI = new ServerAPI("r443.net", 6978);
+            serverAPI = new ServerAPI(Constants.HOST_SRV_ADDRESS, Constants.HOST_SRV_PORT);
 
             // gets pin, game setup
             activeUser = GetPin();
@@ -96,10 +96,7 @@ namespace CasinoGame
                 return;
             }
 
-            // commit bet
-            var res = serverAPI.Transaction(activeUser, (int)nudBet.Value * -1);
-            Console.WriteLine(res);
-            UpdateUserData();
+            
         }
     }
 }

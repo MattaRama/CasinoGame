@@ -1,0 +1,2 @@
+﻿Get 2 in a row = 1.5x payout
+Get 3 in a row = 2x payout

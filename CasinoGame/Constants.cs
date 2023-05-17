@@ -8,6 +8,9 @@ namespace CasinoGame
 {
     public static class Constants
     {
+        public static readonly string HOST_SRV_ADDRESS = "r443.net";
+        public static readonly int HOST_SRV_PORT = 6978;
+
         public static readonly int MAXIMUM_BET = 200;
         public static readonly int MINIMUM_BET = 5;
 
