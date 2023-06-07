@@ -45,10 +45,16 @@ namespace AdminPanel
             CreateUser();
         }
 
+        private bool PinInUse(string pin)
+        {
+            var res = serverAPI.GetUserData(pin);
+            return res != null;
+        }
+
         private bool ValidPin()
         {
             // valid pin
-            var validPinRes = serverAPI.GetUserData(txtCUPin.Text);
+            var validPinRes = serverAPI.GetUserData(txtTransactionPin.Text);
             if (validPinRes != null)
             {
                 MessageBox.Show("Invalid Pin or pin is already in use!", "Error");
@@ -105,8 +111,9 @@ namespace AdminPanel
         private void Transaction()
         {
             // valid pin
-            if (!ValidPin())
+            if (!PinInUse(txtTransactionPin.Text))
             {
+                MessageBox.Show("Could not run transaction; user doesn't exist", "Error                                                                              ");
                 return;
             }
 
@@ -123,6 +130,31 @@ namespace AdminPanel
             }
 
             MessageBox.Show("Commited transaction successfully", "Success");
+        }
+
+        private void btnCommitBalance_Click(object sender, EventArgs e)
+        {
+            if (!PinInUse(txtBalancePin.Text))
+            {
+                MessageBox.Show("Invalid Pin", "Error");
+                return;
+            }
+
+            // get balance
+            var res = serverAPI.GetUserData(txtBalancePin.Text);
+            MessageBox.Show($"{res.firstName} {res.lastName}'s Balance:\n{res.tokens}", "Success");
+        }
+
+        private void btnClearBalance_Click(object sender, EventArgs e)
+        {
+            txtBalancePin.Text = "";
+        }
+
+        private void btnTransactionClear_Click(object sender, EventArgs e)
+        {
+            txtTransactionPin.Text = "";
+            nudTransactionDeposit.Value = 0;
+            cbxPhysical.Checked = true;
         }
     }
 }

@@ -47,6 +47,11 @@
             this.lblPinTransaction = new System.Windows.Forms.Label();
             this.txtTransactionPin = new System.Windows.Forms.TextBox();
             this.cbxPhysical = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBalancePin = new System.Windows.Forms.TextBox();
+            this.btnClearBalance = new System.Windows.Forms.Button();
+            this.btnCommitBalance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudDeposit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTransactionDeposit)).BeginInit();
             this.SuspendLayout();
@@ -176,6 +181,7 @@
             this.btnTransactionClear.TabIndex = 17;
             this.btnTransactionClear.Text = "Clear";
             this.btnTransactionClear.UseVisualStyleBackColor = true;
+            this.btnTransactionClear.Click += new System.EventHandler(this.btnTransactionClear_Click);
             // 
             // btnTransactionCommit
             // 
@@ -245,11 +251,64 @@
             this.cbxPhysical.Text = "Involves Physical Currency";
             this.cbxPhysical.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(617, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 31);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Get Balance";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(569, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 25);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Pin:";
+            // 
+            // txtBalancePin
+            // 
+            this.txtBalancePin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBalancePin.Location = new System.Drawing.Point(624, 53);
+            this.txtBalancePin.Name = "txtBalancePin";
+            this.txtBalancePin.Size = new System.Drawing.Size(184, 22);
+            this.txtBalancePin.TabIndex = 20;
+            // 
+            // btnClearBalance
+            // 
+            this.btnClearBalance.Location = new System.Drawing.Point(753, 89);
+            this.btnClearBalance.Name = "btnClearBalance";
+            this.btnClearBalance.Size = new System.Drawing.Size(54, 23);
+            this.btnClearBalance.TabIndex = 23;
+            this.btnClearBalance.Text = "Clear";
+            this.btnClearBalance.UseVisualStyleBackColor = true;
+            this.btnClearBalance.Click += new System.EventHandler(this.btnClearBalance_Click);
+            // 
+            // btnCommitBalance
+            // 
+            this.btnCommitBalance.Location = new System.Drawing.Point(574, 89);
+            this.btnCommitBalance.Name = "btnCommitBalance";
+            this.btnCommitBalance.Size = new System.Drawing.Size(173, 23);
+            this.btnCommitBalance.TabIndex = 22;
+            this.btnCommitBalance.Text = "Commit";
+            this.btnCommitBalance.UseVisualStyleBackColor = true;
+            this.btnCommitBalance.Click += new System.EventHandler(this.btnCommitBalance_Click);
+            // 
             // frmAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 347);
+            this.ClientSize = new System.Drawing.Size(827, 347);
+            this.Controls.Add(this.btnClearBalance);
+            this.Controls.Add(this.btnCommitBalance);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtBalancePin);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxPhysical);
             this.Controls.Add(this.btnTransactionClear);
             this.Controls.Add(this.btnTransactionCommit);
@@ -299,6 +358,11 @@
         private System.Windows.Forms.Label lblPinTransaction;
         private System.Windows.Forms.TextBox txtTransactionPin;
         private System.Windows.Forms.CheckBox cbxPhysical;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBalancePin;
+        private System.Windows.Forms.Button btnClearBalance;
+        private System.Windows.Forms.Button btnCommitBalance;
     }
 }
 
