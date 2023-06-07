@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoGame", "CasinoGame\CasinoGame.csproj", "{9417100C-EDC2-4DAE-AF89-2C03570697EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPanel", "AdminPanel\AdminPanel.csproj", "{4C20BB65-D74D-4184-9389-9D6F5F4F1DF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9417100C-EDC2-4DAE-AF89-2C03570697EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9417100C-EDC2-4DAE-AF89-2C03570697EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9417100C-EDC2-4DAE-AF89-2C03570697EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C20BB65-D74D-4184-9389-9D6F5F4F1DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C20BB65-D74D-4184-9389-9D6F5F4F1DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C20BB65-D74D-4184-9389-9D6F5F4F1DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C20BB65-D74D-4184-9389-9D6F5F4F1DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

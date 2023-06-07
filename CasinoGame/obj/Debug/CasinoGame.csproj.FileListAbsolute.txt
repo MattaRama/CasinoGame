@@ -45,3 +45,4 @@ C:\Users\Matt\source\repos\CasinoGame\CasinoGame\obj\Debug\CasinoGame.csproj.Cor
 C:\Users\Matt\source\repos\CasinoGame\CasinoGame\obj\Debug\CasinoGame.csproj.CopyComplete
 C:\Users\Matt\source\repos\CasinoGame\CasinoGame\obj\Debug\CasinoGame.exe
 C:\Users\Matt\source\repos\CasinoGame\CasinoGame\obj\Debug\CasinoGame.pdb
+C:\Users\matta\source\repos\CasinoGame\CasinoGame\bin\Debug\AxInterop.WMPLib.dll

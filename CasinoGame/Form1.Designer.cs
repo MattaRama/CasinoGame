@@ -40,6 +40,13 @@
             this.lblGreeting = new System.Windows.Forms.Label();
             this.nudBet = new System.Windows.Forms.NumericUpDown();
             this.lblBet = new System.Windows.Forms.Label();
+            this.btnQuick10 = new System.Windows.Forms.Button();
+            this.lblQuickBet = new System.Windows.Forms.Label();
+            this.btnQuick20 = new System.Windows.Forms.Button();
+            this.btnQuick50 = new System.Windows.Forms.Button();
+            this.btnQuick100 = new System.Windows.Forms.Button();
+            this.btnQuick150 = new System.Windows.Forms.Button();
+            this.btnQuick200 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picSlotBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSlot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSlot2)).BeginInit();
@@ -58,6 +65,7 @@
             // 
             // picSlot1
             // 
+            this.picSlot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picSlot1.Location = new System.Drawing.Point(491, 256);
             this.picSlot1.Name = "picSlot1";
             this.picSlot1.Size = new System.Drawing.Size(64, 87);
@@ -66,6 +74,7 @@
             // 
             // picSlot2
             // 
+            this.picSlot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picSlot2.Location = new System.Drawing.Point(576, 256);
             this.picSlot2.Name = "picSlot2";
             this.picSlot2.Size = new System.Drawing.Size(64, 87);
@@ -74,6 +83,7 @@
             // 
             // picSlot3
             // 
+            this.picSlot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picSlot3.Location = new System.Drawing.Point(659, 256);
             this.picSlot3.Name = "picSlot3";
             this.picSlot3.Size = new System.Drawing.Size(64, 87);
@@ -97,7 +107,7 @@
             // 
             // btnSignOut
             // 
-            this.btnSignOut.Location = new System.Drawing.Point(12, 475);
+            this.btnSignOut.Location = new System.Drawing.Point(12, 500);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(119, 39);
             this.btnSignOut.TabIndex = 5;
@@ -152,11 +162,88 @@
             this.lblBet.TabIndex = 10;
             this.lblBet.Text = "Your Bet:";
             // 
+            // btnQuick10
+            // 
+            this.btnQuick10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuick10.Location = new System.Drawing.Point(12, 320);
+            this.btnQuick10.Name = "btnQuick10";
+            this.btnQuick10.Size = new System.Drawing.Size(71, 67);
+            this.btnQuick10.TabIndex = 11;
+            this.btnQuick10.Text = "10 Tokens";
+            this.btnQuick10.UseVisualStyleBackColor = true;
+            // 
+            // lblQuickBet
+            // 
+            this.lblQuickBet.AutoSize = true;
+            this.lblQuickBet.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuickBet.Location = new System.Drawing.Point(12, 278);
+            this.lblQuickBet.Name = "lblQuickBet";
+            this.lblQuickBet.Size = new System.Drawing.Size(111, 25);
+            this.lblQuickBet.TabIndex = 12;
+            this.lblQuickBet.Text = "Quick Bet:";
+            // 
+            // btnQuick20
+            // 
+            this.btnQuick20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuick20.Location = new System.Drawing.Point(89, 320);
+            this.btnQuick20.Name = "btnQuick20";
+            this.btnQuick20.Size = new System.Drawing.Size(71, 67);
+            this.btnQuick20.TabIndex = 13;
+            this.btnQuick20.Text = "20 Tokens";
+            this.btnQuick20.UseVisualStyleBackColor = true;
+            // 
+            // btnQuick50
+            // 
+            this.btnQuick50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuick50.Location = new System.Drawing.Point(166, 320);
+            this.btnQuick50.Name = "btnQuick50";
+            this.btnQuick50.Size = new System.Drawing.Size(71, 67);
+            this.btnQuick50.TabIndex = 14;
+            this.btnQuick50.Text = "50 Tokens";
+            this.btnQuick50.UseVisualStyleBackColor = true;
+            // 
+            // btnQuick100
+            // 
+            this.btnQuick100.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuick100.Location = new System.Drawing.Point(12, 393);
+            this.btnQuick100.Name = "btnQuick100";
+            this.btnQuick100.Size = new System.Drawing.Size(71, 67);
+            this.btnQuick100.TabIndex = 15;
+            this.btnQuick100.Text = "100 Tokens";
+            this.btnQuick100.UseVisualStyleBackColor = true;
+            // 
+            // btnQuick150
+            // 
+            this.btnQuick150.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuick150.Location = new System.Drawing.Point(89, 393);
+            this.btnQuick150.Name = "btnQuick150";
+            this.btnQuick150.Size = new System.Drawing.Size(71, 67);
+            this.btnQuick150.TabIndex = 16;
+            this.btnQuick150.Text = "150 Tokens";
+            this.btnQuick150.UseVisualStyleBackColor = true;
+            // 
+            // btnQuick200
+            // 
+            this.btnQuick200.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuick200.Location = new System.Drawing.Point(166, 393);
+            this.btnQuick200.Name = "btnQuick200";
+            this.btnQuick200.Size = new System.Drawing.Size(71, 67);
+            this.btnQuick200.TabIndex = 17;
+            this.btnQuick200.Text = "200 Tokens";
+            this.btnQuick200.UseVisualStyleBackColor = true;
+            // 
             // FrmSlotMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 526);
+            this.ClientSize = new System.Drawing.Size(924, 551);
+            this.Controls.Add(this.btnQuick200);
+            this.Controls.Add(this.btnQuick150);
+            this.Controls.Add(this.btnQuick100);
+            this.Controls.Add(this.btnQuick50);
+            this.Controls.Add(this.btnQuick20);
+            this.Controls.Add(this.lblQuickBet);
+            this.Controls.Add(this.btnQuick10);
             this.Controls.Add(this.lblBet);
             this.Controls.Add(this.nudBet);
             this.Controls.Add(this.lblGreeting);
@@ -194,6 +281,13 @@
         private System.Windows.Forms.Label lblGreeting;
         private System.Windows.Forms.NumericUpDown nudBet;
         private System.Windows.Forms.Label lblBet;
+        private System.Windows.Forms.Button btnQuick10;
+        private System.Windows.Forms.Label lblQuickBet;
+        private System.Windows.Forms.Button btnQuick20;
+        private System.Windows.Forms.Button btnQuick50;
+        private System.Windows.Forms.Button btnQuick100;
+        private System.Windows.Forms.Button btnQuick150;
+        private System.Windows.Forms.Button btnQuick200;
     }
 }
 

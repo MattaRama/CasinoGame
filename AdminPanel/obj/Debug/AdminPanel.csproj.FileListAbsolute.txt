@@ -1,0 +1,17 @@
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.csproj.AssemblyReference.cache
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.csproj.SuggestedBindingRedirects.cache
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.frmAdminPanel.resources
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.Properties.Resources.resources
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.csproj.GenerateResource.cache
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.csproj.CoreCompileInputs.cache
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\bin\Debug\AdminPanel.exe.config
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\bin\Debug\AdminPanel.exe
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\bin\Debug\AdminPanel.pdb
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\bin\Debug\CasinoGame.exe
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\bin\Debug\CasinoGame.pdb
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\bin\Debug\CasinoGame.exe.config
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.csproj.CopyComplete
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.exe
+C:\Users\matta\source\repos\CasinoGame\AdminPanel\obj\Debug\AdminPanel.pdb

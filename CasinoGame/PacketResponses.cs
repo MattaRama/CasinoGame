@@ -45,12 +45,40 @@ namespace CasinoGame
         public readonly long timeCreated;
     }
 
+    public class GetResponse<T>
+    {        
+        public GetResponse(T value, string key)
+        {
+            this.value = value;
+            this.key = key;
+        }
+
+        public readonly T value;
+        public readonly string key;
+    }
+
     public enum TransactionPacketResponse
     {
         Success,
         InvalidParams,
         InvalidPin,
         Overdraft,
+        Unknown
+    }
+
+    public enum CreateUserResponse
+    {
+        Success,
+        InvalidParams,
+        PinInUse,
+        InvalidPinFormat,
+        Unknown
+    }
+
+    public enum StoreResponse
+    {
+        Success,
+        InvalidParams,
         Unknown
     }
 }

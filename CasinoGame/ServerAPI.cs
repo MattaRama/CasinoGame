@@ -10,7 +10,7 @@ using Websocket.Client;
 
 namespace CasinoGame
 {
-    internal class ServerAPI
+    public class ServerAPI
     {
         private TcpClient tcpClient;
 
@@ -89,11 +89,100 @@ namespace CasinoGame
                     return TransactionPacketResponse.Unknown;
             }
         }
+    
+        public CreateUserResponse CreateUser(string firstName, string lastName, string pin)
+        {
+            var packet = PacketFactory.GetCreateUserPacket(firstName, lastName, pin);
+            tcpClient.GetStream().Write(packet, 0, packet.Length);
+
+            var retPacket = ReadPacketSync();
+            switch (retPacket["type"].Value<string>())
+            {
+                case "error.invalidParameters":
+                    return CreateUserResponse.InvalidParams;
+                case "error.pinInUse":
+                    return CreateUserResponse.PinInUse;
+                case "error.invalidPinFormat":
+                    return CreateUserResponse.InvalidPinFormat;
+                case "user.create":
+                    return CreateUserResponse.Success;
+                default:
+                    return CreateUserResponse.Unknown;
+            }
+        }
+
+        private StoreResponse Store(byte[] packet)
+        {
+            tcpClient.GetStream().Write(packet, 0, packet.Length);
+
+            var retPacket = ReadPacketSync();
+            switch (retPacket["type"].Value<string>())
+            {
+                case "error.invalidParameters":
+                    return StoreResponse.InvalidParams;
+                case "db.store":
+                    return StoreResponse.Success;
+                default:
+                    return StoreResponse.Unknown;
+            }
+        }
+
+        public StoreResponse Store(string key, string value)
+        {
+            var packet = PacketFactory.GetStorePacket(key, value);
+            return Store(packet);
+        }
+
+        public StoreResponse Store(string key, double value)
+        {
+            var packet = PacketFactory.GetStorePacket(key, value);
+            return Store(packet);
+        }
+
+        public StoreResponse Store(string key, bool value)
+        {
+            var packet = PacketFactory.GetStorePacket(key, value);
+            return Store(packet);
+        }
+
+        public StoreResponse Store(string key, int value)
+        {
+            var packet = PacketFactory.GetStorePacket(key, value);
+            return Store(packet);
+        }
+
+        private JToken GetResponseRaw(string key)
+        {
+            var packet = PacketFactory.GetGetPacket(key);
+            tcpClient.GetStream().Write(packet, 0, packet.Length);
+
+            var retPacket = ReadPacketSync();
+            switch(retPacket["type"].Value<string>())
+            {
+                case "error.invalidParameters":
+                    return null;
+                case "db.get":
+                    return retPacket["value"];
+                default:
+                    return null;
+            }
+        }
+
+        public GetResponse<T> Get<T>(string key)
+        {
+            var responseRaw = GetResponseRaw(key);
+            if (responseRaw == null)
+            {
+                return null;
+            }
+
+            return new GetResponse<T>(responseRaw.Value<T>(), key);
+        }
     }
 
-    public class PacketFactory
+    public static class PacketFactory
     {
-        private static string boolWrapper(bool value)
+        private static string BoolWrapper(bool value)
         {
             return value ? "true" : "false";
         }
@@ -105,7 +194,47 @@ namespace CasinoGame
 
         public static byte[] GetTransactionPacket(string pin, int quantity, bool physicalCurrency)
         {
-            return Encoding.ASCII.GetBytes($"{{\"pin\":\"{pin}\",\"type\":\"user.transaction\",\"quantity\":{quantity},\"physicalCurrency\":{boolWrapper(physicalCurrency)}}}");
+            return Encoding.ASCII.GetBytes($"{{\"pin\":\"{pin}\",\"type\":\"user.transaction\",\"quantity\":{quantity},\"physicalCurrency\":{BoolWrapper(physicalCurrency)}}}");
+        }
+        public static byte[] GetCreateUserPacket(string firstName, string lastName, string pin)
+        {
+            return Encoding.ASCII.GetBytes(
+                $"{{\"type\":\"user.create\", \"firstName\":\"{firstName}\",\"lastName\":\"{lastName}\",\"pin\":\"{pin}\"}}"
+            );
+        }
+
+        public static byte[] GetStorePacket(string key, string value)
+        {
+            return GetStorePacketRaw(key, $"\"{value}\"");
+        }
+
+        public static byte[] GetStorePacket(string key, int value)
+        {
+            return GetStorePacketRaw(key, $"{value}");
+        }
+
+        public static byte[] GetStorePacket(string key, double value)
+        {
+            return GetStorePacketRaw(key, value.ToString());
+        }
+
+        public static byte[] GetStorePacket(string key, bool value)
+        {
+            return GetStorePacketRaw(key, BoolWrapper(value));
+        }
+
+        private static byte[] GetStorePacketRaw(string key, string value)
+        {
+            return Encoding.ASCII.GetBytes(
+                $"{{\"type\":\"db.store\",\"key\":\"{key}\",\"value\":{value}}}"
+            );
+        }
+
+        public static byte[] GetGetPacket(string key)
+        {
+            return Encoding.ASCII.GetBytes(
+                $"{{\"type\": \"db.get\", \"key\":\"{key}\"}}"
+            );
         }
     }
 }

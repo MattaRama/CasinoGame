@@ -21,7 +21,7 @@ namespace CasinoGame
 
     public static class Prompt
     {
-        public static PromptResponse ShowDialog(string text, string caption)
+        public static PromptResponse ShowDialog(string text, string caption, bool hiddenText = false)
         {
             Form prompt = new Form()
             { 
@@ -43,6 +43,10 @@ namespace CasinoGame
                 prompt.Close();
                 exitCode = -1;
             };
+            if (hiddenText)
+            {
+                textBox.PasswordChar = '*';
+            }
             prompt.Controls.Add(textBox);
             prompt.Controls.Add(confirmation);
             prompt.Controls.Add(textLabel);

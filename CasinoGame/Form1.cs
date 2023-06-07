@@ -16,12 +16,30 @@ namespace CasinoGame
         private ServerAPI serverAPI;
         private string activeUser = null;
         private GetUserDataResponse latestUserData;
+        private SlotsManager slotsManager;
+
+        private Button[] quickBetButtons;
 
         public int exitCode { get; private set; } = 0;
 
         public FrmSlotMachine()
         {
             InitializeComponent();
+            slotsManager = new SlotsManager(SlotSetupConstants.ALL_SLOTS, 3);
+
+            quickBetButtons = new Button[] {
+                btnQuick10,
+                btnQuick20,
+                btnQuick50,
+                btnQuick100,
+                btnQuick150,
+                btnQuick200
+            };
+
+            for (var i = 0; i < quickBetButtons.Length; i++)
+            {
+                quickBetButtons[i].Click += QuickBet_Click;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,7 +48,7 @@ namespace CasinoGame
             nudBet.Minimum = Constants.MINIMUM_BET;
             nudBet.Maximum = Constants.MAXIMUM_BET;
             nudBet.Value = Constants.MINIMUM_BET;
-
+            
             // client connection setup
             serverAPI = new ServerAPI(Constants.HOST_SRV_ADDRESS, Constants.HOST_SRV_PORT);
 
@@ -76,7 +94,7 @@ namespace CasinoGame
             latestUserData = serverAPI.GetUserData(activeUser);
 
             // update form
-            txtBalance.Text = $"{latestUserData.tokens}";
+            txtBalance.Text = $"{latestUserData.tokens}"; // TODO: cannot pass data between threads; FIX THIS
         }
 
         private void btnSignOut_Click(object sender, EventArgs e)
@@ -96,7 +114,61 @@ namespace CasinoGame
                 return;
             }
 
-            
+            // disable buttons
+            btnSpin.Enabled = false;
+            SetQuickBetEnabled(false);
+
+            // start game
+            Game g = new Game(
+                slotsManager, 
+                new PictureBox[] { picSlot1, picSlot2, picSlot3 },
+                (int)nudBet.Value,
+                serverAPI,
+                activeUser,
+                this
+            );
+            g.Start();
+        }
+
+        public void SetQuickBetEnabled(bool enabled, bool doInvoke = false)
+        {
+            for (int i = 0; i < quickBetButtons.Length; i++)
+            {
+                if (doInvoke)
+                {
+                    quickBetButtons[i].Invoke(new Action(() => {
+                        quickBetButtons[i].Enabled = enabled;
+                    }));
+                } else
+                {
+                    quickBetButtons[i].Enabled = enabled;
+                }
+            }
+
+        }
+
+        private void QuickBet_Click(object sender, EventArgs e) 
+        {
+            for (var i = 0; i < quickBetButtons.Length; i++)
+            {
+                if (((Button)sender).Equals(quickBetButtons[i]))
+                {
+                    nudBet.Value = Constants.QUICKBET_QUANTITIES[i];
+                    break;
+                }
+            }
+
+            btnSpin.PerformClick();
+        }
+
+        public TextBox GetBalanceTextbox()
+        {
+            return txtBalance;
+        }
+
+        public Button GetSpinButton()
+        {
+            return btnSpin;
         }
     }
 }
