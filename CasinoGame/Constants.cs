@@ -9,7 +9,7 @@ namespace CasinoGame
 {
     public static class Constants
     {
-        public static readonly string HOST_SRV_ADDRESS = "r443.net";
+        public static readonly string HOST_SRV_ADDRESS = "r443.net"; // make sure this resolves to r443.net!!
         public static readonly int HOST_SRV_PORT = 6978;
 
         public static readonly int MAXIMUM_BET = 200;
@@ -42,13 +42,13 @@ namespace CasinoGame
 
     public static class SlotSetupConstants
     {
-        public static readonly string CARD_DB_PATH = "C:\\Users\\matta\\source\\repos\\CasinoGame\\CasinoGame\\slots\\";
+        public static readonly string CARD_DB_PATH = "C:\\Users\\matta\\source\\repos\\CasinoGame\\CasinoGame\\slots\\"; // make sure this turns to \\matta !!!
         public static readonly SlotData[] ALL_SLOTS = {
             new SlotData($"{CARD_DB_PATH}metalPipe.jpg", $"{CARD_DB_PATH}metalPipe.mp3", "metalPipe", 5, 1),
             new SlotData($"{CARD_DB_PATH}baller.jpg", $"{CARD_DB_PATH}baller.mp3", "baller", 1, 2),
             new SlotData($"{CARD_DB_PATH}amongus.jpg", $"{CARD_DB_PATH}amongus.mp3", "amongus", 7, 0.5),
             new SlotData($"{CARD_DB_PATH}winton.jpg", $"{CARD_DB_PATH}winton.mp3", "winton", 2, 1.25),
-            new SlotData($"{CARD_DB_PATH}oof.jpg", $"{CARD_DB_PATH}oof.mp3", "", 1, 1)
+            new SlotData($"{CARD_DB_PATH}oof.jpg", $"{CARD_DB_PATH}oof.mp3", "oof", 1, 1)
         };
     }
 

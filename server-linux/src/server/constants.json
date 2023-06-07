@@ -1,0 +1,30 @@
+{
+    "PACKET_TYPE": {
+        "ERRORS": {
+            "INVALID_JSON": "error.invalidJson",
+            "NO_PACKET_TYPE": "error.noPacketType",
+            "INVALID_PACKET_TYPE": "error.invalidPacketType",
+            "INVALID_PARAMETERS": "error.invalidParameters",
+            "INVALID_PIN": "error.invalidPin",
+            "PIN_IN_USE": "error.pinInUse",
+            "INVALID_PIN_FORMAT": "error.invalidPinFormat",
+            "USER": {
+                "OVERDRAFT": "error.user.overdraft"
+            }
+        },
+        "USER": {
+            "CREATE": "user.create",
+            "TRANSACTION": "user.transaction",
+            "GET_DATA": "user.getData"
+        },
+        "DATABASE": {
+            "STORE": "db.store",
+            "GET": "db.get"
+        }
+    },
+
+    "HANDLERS_PATH": "/home/matt/repos/casinogame/src/server/handlers/",
+    "DATABASE_PATH": "/home/matt/repos/casinogame/db/",
+
+    "PIN_LENGTH": 4
+}

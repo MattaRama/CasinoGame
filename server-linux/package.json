@@ -1,0 +1,14 @@
+{
+  "name": "casinogame",
+  "version": "1.0.0",
+  "description": "Front and back end for our AP Stats Casino game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MattaRama",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "clear-module": "^4.1.2"
+  }
+}

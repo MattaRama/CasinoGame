@@ -46,3 +46,4 @@ C:\Users\Matt\source\repos\CasinoGame\CasinoGame\obj\Debug\CasinoGame.csproj.Cop
 C:\Users\Matt\source\repos\CasinoGame\CasinoGame\obj\Debug\CasinoGame.exe
 C:\Users\Matt\source\repos\CasinoGame\CasinoGame\obj\Debug\CasinoGame.pdb
 C:\Users\matta\source\repos\CasinoGame\CasinoGame\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Matt\source\repos\CasinoGame\CasinoGame\bin\Debug\AxInterop.WMPLib.dll

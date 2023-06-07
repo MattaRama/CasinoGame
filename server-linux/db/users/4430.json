@@ -1,0 +1,12 @@
+{
+    "firstName": "Matthew",
+    "lastName": "Robinson",
+    "pin": "4430",
+    "totals": {
+        "tokens": 528,
+        "totalWon": 2586,
+        "totalLost": 72620,
+        "totalDeposit": 100,
+        "totalWithdraw": 0
+    }
+}

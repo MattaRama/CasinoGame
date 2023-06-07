@@ -1,0 +1,12 @@
+{
+    "firstName": "Jake",
+    "lastName": "Potter",
+    "pin": "4257",
+    "totals": {
+        "tokens": 505,
+        "totalWon": 2025,
+        "totalLost": 2020,
+        "totalDeposit": 0,
+        "totalWithdraw": 0
+    }
+}

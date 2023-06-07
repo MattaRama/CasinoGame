@@ -1,0 +1,12 @@
+{
+    "firstName": "Johnathan",
+    "lastName": "Hay",
+    "pin": "9137",
+    "totals": {
+        "tokens": 0,
+        "totalWon": 0,
+        "totalLost": 0,
+        "totalDeposit": 0,
+        "totalWithdraw": 0
+    }
+}
